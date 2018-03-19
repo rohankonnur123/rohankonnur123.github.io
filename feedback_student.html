@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ 
+<!-- If IE use the latest rendering engine -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+<!-- Set the page to the width of the device and set the zoon level -->
+<meta name="viewport" content="width = device-width, initial-scale = 1">
+<title>Student Feedback</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+<!-- <script src="https://use.typekit.net/cli8lmy.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+ -->
+<style type="text/css">
+@font-face {
+    font-family: DINNextLTPro-UltraLight;
+    src: url(fonts/DINNextLTPro-UltraLight.otf);
+}
+@font-face {
+    font-family: DINNextLTPro-Light;
+    src: url(fonts/DINNextLTPro-Light.otf);
+}
+@font-face {
+    font-family: DINNextLTPro-Bold;
+    src: url(fonts/DINNextLTPro-Bold.otf);
+}
+
+.text-primary {
+  font-size: 1em;
+  font-family: 'DINNextLTPro-Light';
+    color:#504A4B;
+}
+.text-headersmall {
+  font-size: 1em;
+  font-family: 'DINNextLTPro-Bold';
+    color:#504A4B;
+}
+.text-headermedium {
+  font-size: 1em;
+  font-family: 'DINNextLTPro-Bold';
+    color:#504A4B;
+}
+.text-headerlarge {
+  font-size: 1em;
+  font-family: 'DINNextLTPro-Bold';
+    color:#504A4B;
+}
+.text-button {
+  font-size: 1em;
+  font-family: 'DINNextLTPro-Light';
+    color:#FFFFFF;
+}
+
+.jumbotron p{
+  font-size: .75em;
+  font-family: 'DINNextLTPro-Light';
+    color:#504A4B;
+    font-family: 'DINNextLTPro-Light';
+}
+
+.container  p{
+  font-size: .75em;
+  font-family: 'DINNextLTPro-Light';
+    color:#504A4B;
+    font-family: 'DINNextLTPro-Light';
+}
+
+.row p{
+  font-size: 1em;
+  font-family: 'DINNextLTPro-Light';
+    color:#504A4B;
+    font-size: 1em;
+    font-family: 'DINNextLTPro-Light';
+}
+
+
+/* Adds borders for tabs */
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+#graph{
+height: 250px;
+  width: 300px;
+}
+#ourteam2{
+height: 400px;
+  width: 1030px;
+}
+.text-footer {
+  font-size: .9em;
+  font-family: 'DINNextLTPro-Light';
+    color:#504A4B;
+    
+}
+
+</style>
+ 
+</head>
+
+<body>
+
+ <!-- font : <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+<!-- CONTAINERS -->
+<!-- container puts padding around itself while container-fluid fills the whole screen. Bootstap grids require a container. -->
+<div class="container">
+ 
+<!-- page-header adds space aroundtext and enlarges it. It also adds an underline at the end -->
+
+
+<div class="page-header">
+ <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <a href="form_student.html"> <img src="media/title2.png" id="logo2" class="img-responsive img-thumbnail pull-left" alt="Responsive image" style="border-style: none" width="200" height="25" alt="logo2">
+      </a></h1>
+    </div>
+    <p>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <h2>
+        <div class="btn-group lg-btn-group-lg md-btn-group-md sm-btn-group-lg xs-btn-group-md" role="group" aria-label="...">
+     
+        
+  <a href="dashboard_student.html" class = "btn btn-warning btn-lg" role="button" button type= "submit"> <span class="text-button">dashboard</span> </a>
+         <a href="feedback_student" class = "btn btn-warning btn-lg" role="button" button type= "submit"> <span class="text-button">my feedback</span> </a>
+        <a href="index.html" class = "btn btn-warning btn-lg" role="button" button type= "submit"> <span class="text-button">log out</span> </a>
+
+
+            
+        </div> 
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<p>
+<div class="container">
+<!-- jumbotron enlarges fonts and puts everything in a gray box with rounded corners. If jumbotron is outside a container it fills the total width. You can change the styles by placing the changes after the Bootstrap CDN link -->
+<div class="jumbotron"> 
+
+<div class="container">
+  <h3> <span class="text-headerlarge">My Feedback</span> </h3>
+</div>
+ <h4> <span class="text-primary">Below you can view your overall performance as well as for individual projects.</span> </h4>
+ <br></br>
+ <h4>Project 1</h4>
+ <span><b> Overall Score: </b><span id="p1overallScore"></span></span>
+<br></br>
+ <span><b> Creativity Score: </b><span id='p1creativityscore'> </span></span>
+<br></br>
+ <span><b> Cooperation Score: </b><span id="p1cooperationscore"> </span></span>
+<br></br>
+ <span><b> Communication Score: </b><span id='p1communicationscore'></span></span>
+<br></br>
+ <span> <b> Organization Score: </b><span id='p1organizationscore'></span></span>
+<br></br>
+ <span><b> Contribution Score: </b><span id='p1contributionscore'></span></span>
+<br></br>
+ <span><b> Time management Score: </b><span id='p1timemanagementscore'></span></span>
+<br></br>
+ <span><b> Problem solving Score: </b><span id='p1problemsolvingscore'></span></span>
+<br></br>
+ <span><b> Reflection Score: </b><span id='p1reflectionscore'></span></span>
+<br></br>
+ <span><b> Reliable Score: </b><span id='p1reliablescore'></span></span>
+<br></br>
+ <span><b> Leadership Score: </b><span id='p1leadershipscore'></span></span>
+<br></br>
+ <span><b> Positive Score: </b><span id='p1positivescore'></span></span>
+<br></br>
+ <span><b> Admire Feedback: </b><span id='p1admirescore'></span></span>
+<br></br>
+ <span><b> Improve Feedback: </b><span id='p1improvescore'></span></span>
+<br></br>
+ <span><b> Additional Feedback: </b><span id='p1additionalscore'></span></span>
+<br></br>
+
+<h4>Project 2</h4>
+ <span><b> Overall Score: </b><span id="p2overallScore"></span></span>
+<br></br>
+ <span><b> Creativity Score: </b><span id='p2creativityscore'> </span></span>
+<br></br>
+ <span><b> Cooperation Score: </b><span id="p2cooperationscore"> </span></span>
+<br></br>
+ <span><b> Communication Score: </b><span id='p2communicationscore'></span></span>
+<br></br>
+ <span> <b> Organization Score: </b><span id='p2organizationscore'></span></span>
+<br></br>
+ <span><b> Contribution Score: </b><span id='p2contributionscore'></span></span>
+<br></br>
+ <span><b> Time management Score: </b><span id='p2timemanagementscore'></span></span>
+<br></br>
+ <span><b> Problem solving Score: </b><span id='p2problemsolvingscore'></span></span>
+<br></br>
+ <span><b> Reflection Score: </b><span id='p2reflectionscore'></span></span>
+<br></br>
+ <span><b> Reliable Score: </b><span id='p2reliablescore'></span></span>
+<br></br>
+ <span><b> Leadership Score: </b><span id='p2leadershipscore'></span></span>
+<br></br>
+ <span><b> Positive Score: </b><span id='p2positivescore'></span></span>
+<br></br>
+ <span><b> Admire Feedback: </b><span id='p2admirescore'></span></span>
+<br></br>
+ <span><b> Improve Feedback: </b><span id='p2improvescore'></span></span>
+<br></br>
+ <span><b> Additional Feedback: </b><span id='p2additionalscore'></span></span>
+<br></br>
+
+ <h4>Project 3</h4>
+ <span><b> Overall Score: </b><span id="p3overallScore"></span></span>
+<br></br>
+ <span><b> Creativity Score: </b><span id='p3creativityscore'> </span></span>
+<br></br>
+ <span><b> Cooperation Score: </b><span id="p3cooperationscore"> </span></span>
+<br></br>
+ <span><b> Communication Score: </b><span id='p3communicationscore'></span></span>
+<br></br>
+ <span> <b> Organization Score: </b><span id='p3organizationscore'></span></span>
+<br></br>
+ <span><b> Contribution Score: </b><span id='p3contributionscore'></span></span>
+<br></br>
+ <span><b> Time management Score: </b><span id='p3timemanagementscore'></span></span>
+<br></br>
+ <span><b> Problem solving Score: </b><span id='p3problemsolvingscore'></span></span>
+<br></br>
+ <span><b> Reflection Score: </b><span id='p3reflectionscore'></span></span>
+<br></br>
+ <span><b> Reliable Score: </b><span id='p3reliablescore'></span></span>
+<br></br>
+ <span><b> Leadership Score: </b><span id='p3leadershipscore'></span></span>
+<br></br>
+ <span><b> Positive Score: </b><span id='p3positivescore'></span></span>
+<br></br>
+ <span><b> Admire Feedback: </b><span id='p3admirescore'></span></span>
+<br></br>
+ <span><b> Improve Feedback: </b><span id='p3improvescore'></span></span>
+<br></br>
+ <span><b> Additional Feedback: </b><span id='p3additionalscore'></span></span>
+<br></br>
+
+ <h4>Project 4</h4>
+ <span><b> Overall Score: </b><span id="p4overallScore"></span></span>
+<br></br>
+ <span><b> Creativity Score: </b><span id='p4creativityscore'> </span></span>
+<br></br>
+ <span><b> Cooperation Score: </b><span id="p4cooperationscore"> </span></span>
+<br></br>
+ <span><b> Communication Score: </b><span id='p4communicationscore'></span></span>
+<br></br>
+ <span> <b> Organization Score: </b><span id='p4organizationscore'></span></span>
+<br></br>
+ <span><b> Contribution Score: </b><span id='p4contributionscore'></span></span>
+<br></br>
+ <span><b> Time management Score: </b><span id='p4timemanagementscore'></span></span>
+<br></br>
+ <span><b> Problem solving Score: </b><span id='p4problemsolvingscore'></span></span>
+<br></br>
+ <span><b> Reflection Score: </b><span id='p4reflectionscore'></span></span>
+<br></br>
+ <span><b> Reliable Score: </b><span id='p4reliablescore'></span></span>
+<br></br>
+ <span><b> Leadership Score: </b><span id='p4leadershipscore'></span></span>
+<br></br>
+ <span><b> Positive Score: </b><span id='p4positivescore'></span></span>
+<br></br>
+ <span><b> Admire Feedback: </b><span id='p4admirescore'></span></span>
+<br></br>
+ <span><b> Improve Feedback: </b><span id='p4improvescore'></span></span>
+<br></br>
+ <span><b> Additional Feedback: </b><span id='p4additionalscore'></span></span>
+
+</div>
+</div>
+
+</div>
+<span class="text-footer">This tool is brought to you by Group 8.</span>
+
+</div>
+
+</div>
+
+</div><br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBWQYbrbRHn4HeiVbuboMBSAmmNvRIW0o4",
+      authDomain: "database-c6d75.firebaseapp.com",
+      databaseURL: "https://database-c6d75.firebaseio.com",
+      projectId: "database-c6d75",
+      storageBucket: "database-c6d75.appspot.com",
+      messagingSenderId: "996163510328"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+<!-- Use downloaded version of Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/submission.js"></script>
+<script src="js/feedback.js"></script>
+</body>
+</html>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
